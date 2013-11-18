@@ -6,17 +6,17 @@
 		protected $btInterfaceHeight	= "450";
 
 		public function getBlockTypeDescription() {
-			return t('Magnific Zoom');
+			return t('Magnific Popup is a responsive jQuery lightbox & dialog plugin that is focused on performance and providing best experience for user with any device (Zepto.js compatible).');
 		}
 
 		public function getBlockTypeName() {
-			return t('Magnific Zoom');
+			return t('Magnific Popup');
 		}
 
 		public function on_page_view() {
-	      $html = Loader::helper('html');
-	      $this->addHeaderItem($html->css('magnific.css'));
-	      $this->addFooterItem($html->javascript('magnific.js'));
+			$html = Loader::helper('html');
+			$this->addHeaderItem($html->css('magnific.css'));
+			$this->addFooterItem($html->javascript('magnific.js'));
 	   }
 
 		public function getJavaScriptStrings() {
@@ -33,14 +33,14 @@
 		}
 
 		 protected function setFileSets() {
-        Loader::model('file_set');
-        $fileSetsList = FileSet::getMySets();
-        $fileSets = array();
-        foreach ($fileSetsList as $fileSet) {
-            $fileSets[$fileSet->getFileSetID()] = $fileSet->getFileSetName();
-        }
-        $this->set('fileSets', $fileSets);
-    }
+	        Loader::model('file_set');
+	        $fileSetsList = FileSet::getMySets();
+	        $fileSets = array();
+	        foreach ($fileSetsList as $fileSet) {
+	            $fileSets[$fileSet->getFileSetID()] = $fileSet->getFileSetName();
+	        }
+	        $this->set('fileSets', $fileSets);
+	    }
 
 	    public function edit() {
 	        $this->setFileSets();
