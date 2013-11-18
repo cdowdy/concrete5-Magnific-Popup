@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<schema version="0.3">
+	<table name="btMagnificZoom">
+		<field name="bID" type="I">
+		<key />
+		<unsigned />
+	</field>
+	<field name="fIDpicture" type="I"></field>
+	<field name="fsID" type="I">
+		<unsigned />
+	</field>
+	<field name="title" type="C" size="255"></field>
+	<field name="magnific_type" type="C" size="255"></field>
+	<field name="thumbWidth" type="I"></field>
+	<field name="thumbHeight" type="I"></field>
+</table>
+</schema>
