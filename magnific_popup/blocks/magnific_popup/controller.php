@@ -32,8 +32,8 @@
 			return null;
 		}
 
-		 protected function setFileSets() {
-	        Loader::model('file_set');
+		protected function setFileSets() {
+			Loader::model('file_set');
 	        $fileSetsList = FileSet::getMySets();
 	        $fileSets = array();
 	        foreach ($fileSetsList as $fileSet) {
@@ -51,7 +51,6 @@
 	    }
 
 		public function view() {
-
 			$fs = FileSet::getByID($this->fsID);
 	        $fileList = new FileList();
 	        $fileList->filterBySet($fs);
