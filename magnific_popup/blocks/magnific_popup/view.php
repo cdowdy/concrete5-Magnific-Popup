@@ -30,7 +30,7 @@ if ($magnific_type == 'zoom') {
 				}
 			},
 			gallery: {
-				enabled: true
+				enabled: false
 			},
 			zoom: {
 				enabled: true,

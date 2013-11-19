@@ -4,6 +4,7 @@
 		protected $btTable		= 'btMagnificPopup';
 		protected $btInterfaceWidth	= "590";
 		protected $btInterfaceHeight	= "450";
+		protected $btWrapperClass	= 'ccm-ui';
 
 		public function getBlockTypeDescription() {
 			return t('Magnific Popup is a responsive jQuery lightbox & dialog plugin that is focused on performance and providing best experience for user with any device (Zepto.js compatible).');
