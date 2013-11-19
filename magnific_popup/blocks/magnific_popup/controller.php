@@ -24,6 +24,7 @@
 			return array(
 				'selection-required' => t('Please Select a Magnific Type.'),
 				'image-required' => t('Please Select an Image.'),
+				'single-option-required' => t('Please Select a Single Image Option.'),
 				'gallery-required' => t('Please Select a Gallery'),
 				'url-requried' => t('Please Enter a Video or Map URL'),
 				'link-text-required' => t('Please Enter Link Text'),
@@ -48,11 +49,11 @@
 	        $this->set('fileSets', $fileSets);
 	    }
 
-	    public function edit() {
+	    public function add() {
 	        $this->setFileSets();
 	    }
 
-	    public function add() {
+	    public function edit() {
 	        $this->setFileSets();
 	    }
 
