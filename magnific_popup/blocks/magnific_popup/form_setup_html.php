@@ -22,10 +22,10 @@ $al = Loader::helper('concrete/asset_library');
 		<div class="controls">
 			<select id="magnific_type" name="magnific_type" class="span3">
 				<option value="select1"><?php echo t('Select Popup Type')?></option>
-				<option value="single"<?php  if ($magnific_type == 'single') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Single Image Popup')?></option>
-				<option value="popup"<?php  if ($magnific_type == 'popup') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Gallery Popup')?></option>
-				<option value="zoom"<?php  if ($magnific_type == 'zoom') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Zoom-Gallery')?></option>
-				<option value="vidMap"<?php  if ($magnific_type == 'vidMap') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Video or Map Popup')?></option>
+				<option id="single" value="single"<?php  if ($magnific_type == 'single') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Single Image Popup')?></option>
+				<option id="popup" value="popup"<?php  if ($magnific_type == 'popup') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Gallery Popup')?></option>
+				<option id="zoom" value="zoom"<?php  if ($magnific_type == 'zoom') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Zoom-Gallery')?></option>
+				<option id="videoMap" value="vidMap"<?php  if ($magnific_type == 'vidMap') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Video or Map Popup')?></option>
 			</select>
 		</div>
 	</div>
@@ -47,7 +47,7 @@ $al = Loader::helper('concrete/asset_library');
 		<label for="galleryImages" class="control-label"><?php echo t('Choose Image Gallery'); ?></label>
 		<div class="controls">
 			<?php echo $form->select('fsID', $fileSets, $fsID); ?>
-			<span class="help-block">Choose a Gallery Set Of Images</span>
+			<span class="help-block">Choose a Gallery</span>
 		</div>
 	</div>
 </div>
@@ -57,6 +57,7 @@ $al = Loader::helper('concrete/asset_library');
     <label for="videoOptions" class="control-label"><?php   echo t('Video or Map Options')?></label>
       <div class="controls">
         <select id="videoOptions" class="span3" name="videoOptions">
+          <option value="select-3"><?php echo t('Select a Video or Map Type')?></option>
           <option value="youtube"<?php  if ($videoOptions == 'youtube') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('YouTube')?></option>
           <option value="vimeo"<?php  if ($videoOptions == 'vimeo') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Vimeo')?></option>
           <option value="gmaps"<?php  if ($videoOptions == 'gmaps') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Google Maps')?></option>
@@ -66,18 +67,19 @@ $al = Loader::helper('concrete/asset_library');
   <div class="control-group">
     <label for="vidMapURL" class="control-label"><?php   echo t('Video or Map URL')?></label>
     <div class="controls">
-      <input type="text" name="vidMapURL" value="<?php echo $vidMapURL; ?>" class="span3" />
+      <input id="vidMapURL" type="text" name="vidMapURL" value="<?php echo $vidMapURL; ?>" class="span3" />
     </div>
   </div>
   <div class="control-group">
     <label for="vidMapLinkText" class="control-label"><?php   echo t('Video or Map Link Text')?></label>
     <div class="controls">
-      <input type="text" name="vidMapLinkText" value="<?php echo $vidMapLinkText; ?>" class="span3" />
+      <input id="vidMapLinkText" type="text" name="vidMapLinkText" value="<?php echo $vidMapLinkText; ?>" class="span3" />
     </div>
   </div>
 </div>
 
-
+<!-- testing out hide function 
+    so this bad b will be commented our right now
 <script>
 $(document).ready(function() {
 $('#singleImage, #galleryImages, #select1').hide();	
@@ -104,4 +106,13 @@ $('#magnific_type').on('change', function() {
 
  });
 });
+</script>
+-->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#magnific_type').change(handleSelection);
+
+    // run event handler
+    handleSelection.apply($('#magnific_type'));
+  });
 </script>
