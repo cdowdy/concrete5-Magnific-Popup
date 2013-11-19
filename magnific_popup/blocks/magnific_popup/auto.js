@@ -1,5 +1,5 @@
 hideAllTheDivs = function() {
-	$('#singleImage, #galleryImages, #select1').hide();
+	$('#single-options, #singleImage, #galleryImages, #select1').hide();
 };
 
 handleSelection = function() {
@@ -8,6 +8,7 @@ handleSelection = function() {
 	switch ($(this).val()) {
 		case 'single': 
 			$('#singleImage').show("slow");
+			$('#single-options').show("slow");
 			break;
 		case 'popup':
 			$('#galleryImages').show("slow");
@@ -27,6 +28,9 @@ function ccmValidateBlockForm() {
 	}
 	if ($('#magnific_type').val() == 'single' && $("#ccm-b-image-fm-value").val() == 0) {
 		ccm_addError(ccm_t('image-required'));
+	}
+	if ($('#magnific_type').val() == 'single' && $('#singleOption').val() == 'select-2') {
+		ccm_addError(ccm_t('single-option-required'));
 	}
 	if ($('#magnific_type').val() == 'popup' && $('#fsID').val() == '') {
 		ccm_addError(ccm_t('gallery-required'));
