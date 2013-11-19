@@ -1,6 +1,6 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied."));
 
-	class MagnificZoomBlockController extends BlockController {
+	class MagnificPopupBlockController extends BlockController {
 		protected $btTable		= 'btMagnificPopup';
 		protected $btInterfaceWidth	= "590";
 		protected $btInterfaceHeight	= "450";
