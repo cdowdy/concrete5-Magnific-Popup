@@ -2,7 +2,6 @@
 $image = Loader::helper('image'); ?>
 
 <div id="<?php echo $bID; ?>" class="<?php echo $magnific_type; ?>-gallery">
-
 <?php
 /*
 	included files are located in the /includes directory
