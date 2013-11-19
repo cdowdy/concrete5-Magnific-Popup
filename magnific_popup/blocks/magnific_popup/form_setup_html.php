@@ -30,6 +30,22 @@ $al = Loader::helper('concrete/asset_library');
 		</div>
 	</div>
 </div>
+<!-- 
+  Single Popup Options 
+  This seems to be the easiest way to currently implement. May go to an options tab but I don't like the options being separate from the choice.
+  Checkboxes are being a real case of mudbutt. may Change in future
+-->
+<div id="single-options" class="ccm-block-field-group">
+  <label for="singleOption" class="control-label"><?php   echo t('Single Popup Style')?></label>
+    <div class="controls">
+      <select id="singleOption" name="singleOption" class="span3">
+        <option value="select-2" name="select-2"><?php echo t('Select Single Type')?></option>
+        <option value="vertical-fit"<?php  if ($singleOption == 'vertical-fit') { ?> selected<?php  } ?> name="singleOption"><?php echo t('Vertical Fit')?></option>
+        <option value="fit-width"<?php  if ($singleOption == 'fit-width') { ?> selected<?php  } ?> name="singleOption"><?php echo t('Fit To Width')?></option>
+        <option value="no-margins"<?php  if ($singleOption == 'no-margins') { ?> selected<?php  } ?> name="singleOption"><?php echo t('No Margins')?></option>
+      </select>
+    </div>
+</div>
 
 <div id="singleImage" class="ccm-block-field-group">
 	<h5><?php echo t('Single Image'); ?></h5>
@@ -39,6 +55,12 @@ $al = Loader::helper('concrete/asset_library');
 			<?php echo $al->image('ccm-b-image', 'fIDpicture', t('Choose File'), $this->controller->getPicture()); ?>
 		</div>
 	</div>
+  <div class="control-group">
+    <label for="title" class="control-label"><?php echo t('Image Title'); ?></label>
+    <div class="controls">
+      <input type="text" value="<?php echo $title; ?>" name="title" class="span3" />
+    </div>
+  </div>
 </div>
 
 <div id="galleryImages" class="ccm-block-field-group">
@@ -61,6 +83,7 @@ $al = Loader::helper('concrete/asset_library');
           <option value="youtube"<?php  if ($videoOptions == 'youtube') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('YouTube')?></option>
           <option value="vimeo"<?php  if ($videoOptions == 'vimeo') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Vimeo')?></option>
           <option value="gmaps"<?php  if ($videoOptions == 'gmaps') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Google Maps')?></option>
+          <option value="bingmaps"<?php  if ($videoOptions == 'bingmaps') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Bing Maps')?></option>
         </select>
       </div>
   </div>
@@ -78,36 +101,6 @@ $al = Loader::helper('concrete/asset_library');
   </div>
 </div>
 
-<!-- testing out hide function 
-    so this bad b will be commented our right now
-<script>
-$(document).ready(function() {
-$('#singleImage, #galleryImages, #select1').hide();	
-$('#magnific_type').on('change', function() {
-        if($(this).val() == 'single' || 'zoom') {
-            $('#singleImage').show("slow");
-            $('#galleryImages').hide("slow");
-        } else {
-            $('#singleImage').hide("slow");
-        }
-        if($(this).val() == 'popup') {
-        	$('#singleImage').hide("slow");
-        	$('#galleryImages').show("slow");
-        }
-        if($(this).val() == 'vidMap') {
-        	$('#vidMap').show("slow");
-        	$('#singleImage').hide("slow");
-        }
-        if($(this).val() == 'select1') {
-        	$('#singleImage').hide("slow");
-        	$('#galleryImages').hide("slow");
-        	$('#vidMap').hide("slow");
-        }
-
- });
-});
-</script>
--->
 <script type="text/javascript">
   $(document).ready(function() {
     $('#magnific_type').change(handleSelection);
