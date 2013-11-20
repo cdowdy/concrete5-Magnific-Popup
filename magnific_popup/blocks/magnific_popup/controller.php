@@ -16,8 +16,8 @@
 
 		public function on_page_view() {
 			$html = Loader::helper('html');
-			$this->addHeaderItem($html->css('magnific.css'));
 			$this->addFooterItem($html->javascript('magnific.js'));
+			$this->addFooterItem($html->javascript('vimeothumb.min.js'));
 	   }
 
 		public function getJavaScriptStrings() {
