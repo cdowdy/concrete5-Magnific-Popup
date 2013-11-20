@@ -13,10 +13,9 @@
 	<field name="magnific_type" type="C" size="255"></field>
 	<field name="singleOption" type="C" size="255"></field>
 	<field name="videoOptions" type="C" size="255"></field>
-	<field name="embedInContent" type="C" size="255"></field>
+	<field name="youtubeThumbnailOption" type="C" size="255"></field>
+	<field name="vimeoThumbnailOption" type="C" size="255"></field>
 	<field name="vidMapURL" type="X2"></field>
-	<field name="videoMapBeforeContent" type="X2"></field>
-	<field name="videoMapAfterContent" type="X2"></field>
 	<field name="vidMapLinkText" type="C" size="255"></field>
 	<field name="thumbWidth" type="I"></field>
 	<field name="thumbHeight" type="I"></field>
