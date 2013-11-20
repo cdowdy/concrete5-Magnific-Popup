@@ -1,5 +1,5 @@
 hideAllTheDivs = function() {
-	$('#single-options, #singleImage, #galleryImages, #select1').hide();
+	$('#single-options, #singleImage, #galleryImages, #youtubeThumb, #vimeoThumb').hide();
 };
 
 handleSelection = function() {
@@ -18,9 +18,17 @@ handleSelection = function() {
 			break;
 		case 'vidMap':
 			$('#vidMap').show("slow");
+			break;
+		case 'youtubeThumb':
+			$('#youtubeThumb').show("slow");
+		case 'vimeoThumb':
+			$('#vimeoThumb').show("slow");
 	}
 };
 
+
+
+// input validation 
 function ccmValidateBlockForm() {
 
 	if ($('#magnific_type').val() == 'select1') {
