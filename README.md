@@ -35,7 +35,8 @@ To Do's
 - [ ] fully implement CSS framework input for containing divs.
 - [ ] fig and figcaption? 
 - [ ] finish bing maps support just to round out maps. maybe add others. 
-- [ ] install icon needs to be made.
+- [x] install icon needs to be made.
+- [x] add block icon needs to be made.
 - [x] screenshots.
 
 
