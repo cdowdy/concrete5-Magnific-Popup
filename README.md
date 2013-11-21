@@ -29,14 +29,22 @@ To Do's
 ------
 - [ ] create webp fallback images (progressive jpg) and have them load automagically for unsupported browsers.
 - [ ] modal and css dialog support.
+- [ ] add image previews to gallery and possibly sorting order.
 - [ ] move inline block javascript to footer (bigger pain than I thought were possible).
 - [ ] fully implement CSS framework input for containing divs.
 - [ ] fig and figcaption? 
 - [ ] finish bing maps support just to round out maps. maybe add others. 
 - [ ] install icon needs to be made.
+- [x] screenshots.
 
 
 Screenshots
 -----------
+
+![Main](./screenshots/magnific.png)
+![Single Image](./screenshots/single.png)
+![Gallery Of Images](./screenshots/gallery.png)
+![Zoom](./screenshots/zoom.png)
+![Video](./screenshots/video.png)
 
 
