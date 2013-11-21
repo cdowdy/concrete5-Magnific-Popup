@@ -27,7 +27,7 @@ Installation:
 
 To Do's
 ------
-- [ ] create webp fallback images (progressive jpg) and have them load automagically for unsupported browsers.
+- [ ] create webp fallback images (progressive jpg/transparent png) and have them load automagically for unsupported browsers.
 - [ ] modal and css dialog support.
 - [ ] add image previews to gallery and possibly sorting order.
 - [ ] move inline block javascript to footer (bigger pain than I thought were possible).
