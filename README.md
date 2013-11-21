@@ -20,7 +20,7 @@ Installation:
 -------------
 
 1. clone/ or download zip.
-2. unzip and move to /packages directory.  
+2. unzip and move the top-level magnific_popup folder to /packages directory.  
 3. In the Concrete5 Dashboard go to "Extend Concrete5".  
 4. Magnific Popup should be waiting for installation.
 
