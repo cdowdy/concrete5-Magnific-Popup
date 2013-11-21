@@ -2,6 +2,7 @@ Concrete5 Magnific Popup Add-on Package
 =======================================
 
 Dmitry Semenov's Magnific Popup Responsive Lightbox Plugin in a Concrete5 Add-On Package.
+Minimum Concrete5 Version for this Add-on is 5.6.0
 
 This Project uses the following:
 -------------------------------------
