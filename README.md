@@ -8,7 +8,8 @@ This Project uses the following:
 -------------------------------------
 - Magnific Popup http://dimsemenov.com/plugins/magnific-popup/ or @dimsemenov (https://github.com/dimsemenov/Magnific-Popup).  
 - Jquery VimeoThumb.js its one of the easier ways if not the easiest way to grab Vimeo Thumbnails
-- https://github.com/Ideame/jquery-vimeothumb/blob/master/jquery-vimeothumb.js
+- https://github.com/Ideame/jquery-vimeothumb/blob/master/jquery-vimeothumb.js  
+- and of course Concrete5:  http://www.concrete5.org/
 
 This Concrete5 add-on has:
 --------------------------
