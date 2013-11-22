@@ -33,7 +33,7 @@ To Do's
 - [ ] modal and css dialog support.
 - [ ] add image previews to gallery and possibly sorting order.
 - [ ] move inline block javascript to footer (bigger pain than I thought were possible).
-- [ ] fully implement CSS framework input (only does divs right now).
+- [x] fully implement CSS framework input (only does divs, probably best to leave ul's to templates).
 - [ ] fig and figcaption? 
 - [ ] finish bing maps support just to round out maps. maybe add others. 
 - [x] install icon needs to be made.
