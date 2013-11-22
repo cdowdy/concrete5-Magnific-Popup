@@ -11,9 +11,10 @@ if ($picture) {
 	echo "</a>";
 	}
 ?>
+</div>
 <script>
 $(document).ready(function() {
-	if (!CCM_EDIT_MODE) { 
+	
 		$('.zoom-gallery').magnificPopup({
 		delegate: 'a',
 		type: 'image',
@@ -38,6 +39,5 @@ $(document).ready(function() {
 		}
 		
 	});
-	}
 });
 </script>

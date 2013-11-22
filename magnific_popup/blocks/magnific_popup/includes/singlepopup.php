@@ -1,17 +1,18 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied."));
 $image = Loader::helper('image');
 
+
 if ($picture) {
 	$bigPicture = $image->getThumbnail($picture, 800,800)->src;
 	$smallPicture = $image->getThumbnail($picture, 200,200)->src;
 
 	
 	echo "<a class=\"image-popup-{$singleOption}\" href=\"{$bigPicture}\" title=\"{$title}\" >";
-	echo "<img src=\"{$smallPicture}\" alt=\"{$title}\" title=\"{$this->controller->title}\"/>";
+	echo "<img src=\"{$smallPicture}\" alt=\"{$title}\" title=\"{$this->controller->title}\" width=\"{$thumbWidth}\" height=\"{$thumbHeight}\" />";
 	echo "</a>";
 	}
 ?>
-
+</div>
 <?php if ($singleOption == 'vertical-fit') : ?>
 <script>
 $(document).ready(function() {
