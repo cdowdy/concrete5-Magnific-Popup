@@ -10,6 +10,7 @@
 		<unsigned />
 	</field>
 	<field name="title" type="C" size="255"></field>
+	<field name="cssFrameworkClass" type="C" size="255"></field>
 	<field name="magnific_type" type="C" size="255"></field>
 	<field name="singleOption" type="C" size="255"></field>
 	<field name="videoOptions" type="C" size="255"></field>
