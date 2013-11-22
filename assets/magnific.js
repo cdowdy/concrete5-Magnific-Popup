@@ -533,6 +533,11 @@
                 gmaps: {
                     index: "//maps.google.",
                     src: "%id%&output=embed"
+                },
+                bingmaps: {
+                    index: "//bing.com/maps",
+                    id: "?",
+                    src: "//www.bing.com/maps/%id%"
                 }
             }
         },
