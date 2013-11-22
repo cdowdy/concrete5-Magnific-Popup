@@ -1,7 +1,7 @@
 <?php
 $image = Loader::helper('image'); ?>
 
-<div id="<?php echo $bID; ?>" class="<?php echo $magnific_type; ?>-gallery">
+<div id="<?php echo $magnific_type .'-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
 <?php
 /*
 	included files are located in the /includes directory
@@ -23,5 +23,3 @@ switch ($magnific_type) {
 		$this->inc('includes/videomapspopup.php');
 		break;
 }
-?>
-</div>
