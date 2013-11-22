@@ -35,7 +35,7 @@ To Do's
 - [ ] move inline block javascript to footer (bigger pain than I thought were possible).
 - [x] fully implement CSS framework input (only does divs, probably best to leave ul's to templates).
 - [ ] fig and figcaption? 
-- [ ] finish bing maps support just to round out maps. maybe add others. 
+- [x] bing maps. (added but it isnt fullscreen lightbox). 
 - [x] install icon needs to be made.
 - [x] add block icon needs to be made.
 - [x] screenshots.
