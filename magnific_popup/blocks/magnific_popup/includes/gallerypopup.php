@@ -11,6 +11,7 @@ foreach ($images as $image) {
 	echo "</a>";
 }
 ?>
+</div>
 <script>
 $(document).ready(function() {
 $('.popup-gallery').magnificPopup({
