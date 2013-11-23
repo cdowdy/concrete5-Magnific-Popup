@@ -21,7 +21,7 @@ This Concrete5 add-on has:
 Installation:
 -------------
 
-1. clone/ or download zip. or head over to releases (https://github.com/cdowdy/concrete5-Magnific-Popup/releases)
+1. clone/fork/download zip. or head over to releases (https://github.com/cdowdy/concrete5-Magnific-Popup/releases)
 2. unzip and move the top-level magnific_popup folder to /packages directory.  
 3. In the Concrete5 Dashboard go to "Extend Concrete5".  
 4. Magnific Popup should be waiting for installation.
