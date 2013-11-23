@@ -1,8 +1,8 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied."));
 	$defaultDelay = 700;
 
-	$url = $vidMapURL;
-	$str = substr(strrchr($url, '='), 1);
+	$url    = $vidMapURL;
+	$str    = substr(strrchr($url, '='), 1);
 	$vimStr = substr(strrchr($url, '/'), 1);
 
 // edit mode clash fixes
