@@ -1,6 +1,4 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied."));
-
-
 foreach ($images as $image) {
 	$fileName = $image->getFileName();
 	$picturePath = $image->getRelativePath();
