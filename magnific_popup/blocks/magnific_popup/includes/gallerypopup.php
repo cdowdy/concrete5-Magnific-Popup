@@ -10,6 +10,8 @@ foreach ($images as $image) {
 }
 ?>
 </div>
+<?php $page = Page::getCurrentPage(); ?>
+<?php if(!$page->isEditMode()): ?>
 <script>
 $(document).ready(function() {
 $('.popup-gallery').magnificPopup({
@@ -31,3 +33,4 @@ $('.popup-gallery').magnificPopup({
 });
 });
 </script>
+<?php endif; ?>

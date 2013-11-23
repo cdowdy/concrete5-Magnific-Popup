@@ -13,6 +13,8 @@ if ($picture) {
 	}
 ?>
 </div>
+<?php $page = Page::getCurrentPage(); ?>
+<?php if(!$page->isEditMode()): ?>
 <?php if ($singleOption == 'vertical-fit') : ?>
 <script>
 $(document).ready(function() {
@@ -62,4 +64,5 @@ $('.image-popup-no-margins').magnificPopup({
 
 });
 </script>
+<?php endif; ?>
 <?php endif; ?>
