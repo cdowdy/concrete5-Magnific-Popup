@@ -26,7 +26,7 @@ class MagnificPopupBlockController extends BlockController {
 		$html = Loader::helper( 'html' );
 		$bv = new BlockView();
 		$bv->setBlockObject( $this->getBlockObject() );
-		$this->addFooterItem( $html->javascript( $bv->getBlockURL() . '/magnific/magnific-0.0.1.js' ) );
+		$this->addFooterItem( $html->javascript( $bv->getBlockURL() . '/magnific/magnific-combined-1.0.0.min.js', array('minify' => true)));
 	}
 
 	// JavaScript form validation strings
