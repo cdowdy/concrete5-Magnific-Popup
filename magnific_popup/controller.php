@@ -1,23 +1,23 @@
-<?php defined('C5_EXECUTE') or die(_("Access Denied."));
-	
-	class MagnificPopupPackage extends Package {
+<?php defined( 'C5_EXECUTE' ) or die( _( "Access Denied." ) );
 
-		protected $pkgHandle			= 'magnific_popup';
-		protected $appVersionRequired	= '5.6.0';
-		protected $pkgVersion			= '1.0.0';
+class MagnificPopupPackage extends Package {
 
-		public function getPackageName() {
-			return t('Magnific Popup');
-		}
+	protected $pkgHandle          = 'magnific_popup';
+	protected $appVersionRequired = '5.6.0';
+	protected $pkgVersion         = '1.0.0';
 
-		public function getPackageDescription() {
-			return t('Magnific Popup is a responsive jQuery lightbox & dialog plugin that is focused on performance and providing best experience for user with any device (Zepto.js compatible).');
-		}
-
-		public function install() {
-			$pkg = parent::install();
-
-			BlockType::installBlockTypeFromPackage('magnific_popup', $pkg);
-		}
+	public function getPackageName() {
+		return t( 'Magnific Popup' );
 	}
+
+	public function getPackageDescription() {
+		return t( 'Magnific Popup is a responsive jQuery lightbox & dialog plugin that is focused on performance and providing best experience for user with any device (Zepto.js compatible).' );
+	}
+
+	public function install() {
+		$pkg = parent::install();
+
+		BlockType::installBlockTypeFromPackage( 'magnific_popup', $pkg );
+	}
+}
 ?>
