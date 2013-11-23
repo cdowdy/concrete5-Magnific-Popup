@@ -16,7 +16,7 @@ This Concrete5 add-on has:
 - Single Image Lightbox
 - Gallery Image Lightbox
 - Video and Map Lightbox w/optional youtube or vimeo thumbnail
-- current version # is 0.0.1
+- current version # is 1.0.0
 
 Installation:
 -------------
