@@ -4,7 +4,7 @@
 
 		protected $pkgHandle			= 'magnific_popup';
 		protected $appVersionRequired	= '5.6.0';
-		protected $pkgVersion			= '0.0.1';
+		protected $pkgVersion			= '1.0.0';
 
 		public function getPackageName() {
 			return t('Magnific Popup');
