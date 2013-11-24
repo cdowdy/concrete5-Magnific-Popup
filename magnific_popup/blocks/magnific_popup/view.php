@@ -1,8 +1,5 @@
 <?php
-$image = Loader::helper('image'); ?>
-
-<div id="<?php echo $magnific_type .'-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
-<?php
+$image = Loader::helper('image');
 /*
 	included files are located in the /includes directory
 */

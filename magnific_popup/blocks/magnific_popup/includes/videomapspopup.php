@@ -1,9 +1,11 @@
-<?php defined('C5_EXECUTE') or die(_("Access Denied."));
+<?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
+<div id="<?php echo $magnific_type .'-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
+<?php
 	$defaultDelay = 700;
-
-	$url    = $vidMapURL;
-	$str    = substr(strrchr($url, '='), 1);
-	$vimStr = substr(strrchr($url, '/'), 1);
+	
+	$url          = $vidMapURL;
+	$str          = substr(strrchr($url, '='), 1);
+	$vimStr       = substr(strrchr($url, '/'), 1);
 
 // edit mode clash fixes
 $c = Page::getCurrentPage();
