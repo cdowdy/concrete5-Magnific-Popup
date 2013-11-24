@@ -1,15 +1,17 @@
-<?php defined('C5_EXECUTE') or die(_("Access Denied."));
+<?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
+<ul id="<?php echo $magnific_type . '-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
+<?php
 foreach ($images as $image) {
 	$fileName = $image->getFileName();
 	$picturePath = $image->getRelativePath();
 	$thumbnail = $image->getThumbnail(2, false);
 
-	echo "<a title=\"{$fileName}\" href=\"{$picturePath}\">";
+	echo "<li><a title=\"{$fileName}\" href=\"{$picturePath}\">";
 	echo "<img src=\"{$thumbnail}\" />";
-	echo "</a>";
+	echo "</a></li>";
 }
 ?>
-</div>
+</ul>
 <?php $page = Page::getCurrentPage(); ?>
 <?php if(!$page->isEditMode()): ?>
 <script>
