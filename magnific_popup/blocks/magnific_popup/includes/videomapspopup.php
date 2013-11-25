@@ -1,4 +1,5 @@
-<?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
+<?php defined('C5_EXECUTE') or die(_("Access Denied."));
+$v 	  = View::GetInstance(); ?>
 <div id="<?php echo $magnific_type .'-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
 <?php
 	$defaultDelay = 700;
@@ -6,14 +7,8 @@
 	$url          = $vidMapURL;
 	$str          = substr(strrchr($url, '='), 1);
 	$vimStr       = substr(strrchr($url, '/'), 1);
+?>
 
-// edit mode clash fixes
-$c = Page::getCurrentPage();
-if ($c->isEditMode()) { ?>
-	<div class="ccm-edit-mode-disabled-item" style="height: 200px; width: 350px;">
-		<div style="padding: 80px 0px 0px 0px"><?php echo t('Thumbnails and Maps disabled in Edit Mode. This is a Placeholder and is not representative of actual thumbnail or map size.')?></div>
-	</div>
-<?php  } else { ?>
 	<a class="popup-<?php echo $videoOptions; ?>" href="<?php echo $vidMapURL; ?>"><?php echo $vidMapLinkText; ?>
 <?php if ($videoOptions == 'youtubeThumb') :?>
 		<img src="http://img.youtube.com/vi/<?php echo $str. '/'. $youtubeThumbnailOption;?>.jpg" /></a>
@@ -21,14 +16,15 @@ if ($c->isEditMode()) { ?>
 <?php if ($videoOptions == 'vimeoThumb') :?>
 	<img src="http://placehold.it/350x150" data-vimeo-id="<?php echo $vimStr;?>" class="<?php echo $vimeoThumbnailOption;?>"/></a>
 <?php endif; ?>
-<?php  } ?>
 </div>
-<?php $page = Page::getCurrentPage(); ?>
-<?php if(!$page->isEditMode()): ?>
-<script>
+<?php
+// put these here scripts in the footer
+$page = Page::getCurrentPage();
+if (!$page->isEditMode()) {
+	$v->addFooterItem("<script>
 $(document).ready(function() {
-$('.popup-<?php echo $videoOptions;?>').magnificPopup({
-	disableOn: <?php echo $defaultDelay;?>,
+$('.popup-$videoOptions').magnificPopup({
+	disableOn: $defaultDelay,
 	type: 'iframe',
 	mainClass: 'mfp-fade',
 	removalDelay: 160,
@@ -38,5 +34,6 @@ $('.popup-<?php echo $videoOptions;?>').magnificPopup({
 });
 $('img').VimeoThumb();
 });
-</script>
-<?php endif; ?>
+</script>");
+}
+?>

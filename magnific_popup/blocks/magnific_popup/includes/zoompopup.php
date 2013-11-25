@@ -1,4 +1,7 @@
-<?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
+<?php defined('C5_EXECUTE') or die(_("Access Denied."));
+$page = Page::getCurrentPage();
+$v 	  = View::GetInstance();
+?>
 <div id="<?php echo $magnific_type .'-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
 <?php
 $image = Loader::helper('image');
@@ -14,20 +17,21 @@ if ($picture) {
 	}
 ?>
 </div>
-<?php $page = Page::getCurrentPage(); ?>
-<?php if(!$page->isEditMode()): ?>
-<script>
+<?php
+// send js to footer
+if (!$page->isEditMode()) {
+	$v->addFooterItem('<script>
 $(document).ready(function() {
-$('.zoom-gallery').magnificPopup({
-	delegate: 'a',
-	type: 'image',
+$(\'.zoom-gallery\').magnificPopup({
+	delegate: \'a\',
+	type: \'image\',
 	closeOnContentClick: false,
 	closeBtnInside: false,
-	mainClass: 'mfp-with-zoom mfp-img-mobile',
+	mainClass: \'mfp-with-zoom mfp-img-mobile\',
 	image: {
 		verticalFit: true,
 		titleSrc: function(item) {
-			return item.el.attr('title') + ' &middot; <a class="image-source-link" href="'+item.el.attr('data-source')+'" target="_blank">image source</a>';
+			return item.el.attr(\'title\') + \' &middot; <a class="image-source-link" href="\'+item.el.attr(\'data-source\')+\'" target="_blank">image source</a>\';
 		}
 	},
 	gallery: {
@@ -35,13 +39,14 @@ $('.zoom-gallery').magnificPopup({
 	},
 	zoom: {
 		enabled: true,
-		duration: 300, // don't foget to change the duration also in CSS
+		duration: 300, // don\'t foget to change the duration also in CSS
 		opener: function(element) {
-			return element.find('img');
+			return element.find(\'img\');
 		}
 	}
 		
 });
 });
-</script>
-<?php endif; ?>
+</script>');
+}
+?>

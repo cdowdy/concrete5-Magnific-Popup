@@ -1,4 +1,7 @@
-<?php defined('C5_EXECUTE') or die(_("Access Denied.")); ?>
+<?php defined('C5_EXECUTE') or die(_("Access Denied."));
+$page = Page::getCurrentPage();
+$v 	  = View::GetInstance();
+?>
 <div id="<?php echo $magnific_type .'-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
 <?php
 $image = Loader::helper('image');
@@ -15,28 +18,29 @@ if ($picture) {
 	}
 ?>
 </div>
-<?php $page = Page::getCurrentPage(); ?>
-<?php if(!$page->isEditMode()): ?>
-<?php if ($singleOption == 'vertical-fit') : ?>
-<script>
+<?php 
+if(!$page->isEditMode()) {
+	switch ($singleOption) {
+		case 'vertical-fit':
+			$v->addFooterItem('<script>
 $(document).ready(function() {
-$('.image-popup-vertical-fit').magnificPopup({
-	type: 'image',
+$(\'.image-popup-vertical-fit\').magnificPopup({
+	type: \'image\',
 	closeOnContentClick: true,
-	mainClass: 'mfp-img-mobile',
+	mainClass: \'mfp-img-mobile\',
 	image: {
 		verticalFit: true
 	}
 });
 
 });
-</script>
-<?php endif; ?>
-<?php if ($singleOption == 'fit-width') : ?>
-<script>
+</script>');
+			break;
+		case 'fit-width':
+			$v->addFooterItem('<script>
 $(document).ready(function() {
-$('.image-popup-fit-width').magnificPopup({
-	type: 'image',
+$(\'.image-popup-fit-width\').magnificPopup({
+	type: \'image\',
 	closeOnContentClick: true,
 	image: {
 		verticalFit: false
@@ -44,27 +48,29 @@ $('.image-popup-fit-width').magnificPopup({
 });
 
 });
-</script>
-<?php endif; ?>
-<?php if ($singleOption == 'no-margins') : ?>
-<script>
+</script>');
+			break;
+		case 'no-margins':
+			$v->addFooterItem('<script>
 $(document).ready(function() {
-$('.image-popup-no-margins').magnificPopup({
-	type: 'image',
+$(\'.image-popup-no-margins\').magnificPopup({
+	type: \'image\',
 	closeOnContentClick: true,
 	closeBtnInside: false,
 	fixedContentPos: true,
-	mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+	mainClass: \'mfp-no-margins mfp-with-zoom\', // class to remove default margin from left and right side
 		image: {
 			verticalFit: true
 		},
 		zoom: {
 			enabled: true,
-			duration: 300 // don't foget to change the duration also in CSS
+			duration: 300 // don\'t foget to change the duration also in CSS
 		}
 });
 
 });
-</script>
-<?php endif; ?>
-<?php endif; ?>
+</script>');
+			break;
+	}
+}
+?>
