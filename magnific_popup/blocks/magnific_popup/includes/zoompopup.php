@@ -1,21 +1,20 @@
 <?php defined('C5_EXECUTE') or die(_("Access Denied."));
 $page = Page::getCurrentPage();
 $v 	  = View::GetInstance();
+
+$image = Loader::helper('image');
+$po =  $controller->getPictureObject();
+	
+$fileName = $po->getRelativePath();
+$thumbnail = $image->getThumbnail($po,intval($controller->thumbnailWidth), intval($controller->thumbnailHeight));
 ?>
 <div id="<?php echo $magnific_type .'-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
-<?php
-$image = Loader::helper('image');
-
-if ($picture) {
-	$bigPicture = $image->getThumbnail($picture, 800,800)->src;
-	$smallPicture = $image->getThumbnail($picture, 200,200)->src;
-
-	
-	echo "<a href=\"{$bigPicture}\" title=\"{$title}\" data-source=\"{$bigPicture}\" >";
-	echo "<img src=\"{$smallPicture}\" alt=\"{$title}\" title=\"{$this->controller->title}\"/>";
-	echo "</a>";
-	}
-?>
+	<a class="image-popup-<?php echo $singleOption;?>" href="<?php echo $fileName; ?>" title="<?php echo $title;?>">
+		<img src="<?php  echo $thumbnail->src;?>" width="<?php echo $thumbnail->width;?>" height="<?php echo $thumbnail->height;?>" alt="<?php echo $titlte;?>" />
+	</a>
+</div>
+<div>
+	<p><?php echo $thumbnailHeight . ' '. $thumbnailWidth; ?></p>
 </div>
 <?php
 // send js to footer
