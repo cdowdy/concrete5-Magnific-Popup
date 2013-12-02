@@ -51,27 +51,26 @@ class MagnificPopupBlockController extends BlockController {
 		 return File::getByID($this->fIDpicture);
 	}
 
-	// grabbing file_set / image gallerys in file manager
-	protected function setFileSets() {
-		Loader::model( 'file_set' );
-		$fileSetsList = FileSet::getMySets();
-		$fileSets = array();
-		foreach ( $fileSetsList as $fileSet ) {
-			$fileSets[$fileSet->getFileSetID()] = $fileSet->getFileSetName();
-		}
-		$this->set( 'fileSets', $fileSets );
-	}
-	function getGalleryImages() {
-		return FileSet::$this->fsID;
-	}
-
 	public function add() {
-		$this->setFileSets();
-	}
-
-	public function edit() {
-		$this->setFileSets();
-	}
+      $this->addEdit();
+   }
+   
+   public function edit() {
+      $this->addEdit();
+   }
+   
+   public function addEdit() {
+      $fsList = new FileSetList();
+      $sets = $fsList->get();
+      
+      $options = array();
+      
+      foreach ($sets as $fs) {
+         $options[$fs->fsID] = $fs->fsName;
+      }
+      
+      $this->set('sets', $options);
+   }
 
 	public function view() {
 		$fs = FileSet::getByID( $this->fsID );
