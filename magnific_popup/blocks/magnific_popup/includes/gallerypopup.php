@@ -20,9 +20,6 @@ $ih = Loader::helper('image');
    <p><?php echo t('There are no images!') ?></p>
 <?php endif; ?>
 <?php
-   echo $thumbnailHeight. ','. $thumbnailWidth;
-?>
-<?php
 if (!$page->isEditMode()) {
 	$v->addFooterItem('<script>
 $(document).ready(function() {
