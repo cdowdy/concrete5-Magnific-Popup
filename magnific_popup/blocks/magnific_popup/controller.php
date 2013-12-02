@@ -24,9 +24,11 @@ class MagnificPopupBlockController extends BlockController {
 	// on page view insert magnific javascript and vimeo thumb javascript into footer (these are minified)
 	public function on_page_view() {
 		$html = Loader::helper( 'html' );
-		$bv = new BlockView();
+
+		$bv   = new BlockView();
 		$bv->setBlockObject( $this->getBlockObject() );
 		$this->addFooterItem( $html->javascript( $bv->getBlockURL() . '/magnific/magnific-combined-1.0.0.min.js', array('minify' => true)));
+
 	}
 
 	// JavaScript form validation strings
@@ -43,11 +45,12 @@ class MagnificPopupBlockController extends BlockController {
 	}
 	// getting a picture for the file picker
 	public function getPicture() {
-		if ( $this->fIDpicture > 0 ) {
-			return File::getByID( $this->fIDpicture );
-		}
-		return null;
+		return $this->fIDpicture;
 	}
+	function getPictureObject() {
+		 return File::getByID($this->fIDpicture);
+	}
+
 	// grabbing file_set / image gallerys in file manager
 	protected function setFileSets() {
 		Loader::model( 'file_set' );
@@ -57,6 +60,9 @@ class MagnificPopupBlockController extends BlockController {
 			$fileSets[$fileSet->getFileSetID()] = $fileSet->getFileSetName();
 		}
 		$this->set( 'fileSets', $fileSets );
+	}
+	function getGalleryImages() {
+		return FileSet::$this->fsID;
 	}
 
 	public function add() {
@@ -80,4 +86,3 @@ class MagnificPopupBlockController extends BlockController {
 		$this->set( 'picture', $this->getPicture() );
 	}
 }
-?>
