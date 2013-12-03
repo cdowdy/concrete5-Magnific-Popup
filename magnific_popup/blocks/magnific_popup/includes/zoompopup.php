@@ -7,14 +7,13 @@ $po =  $controller->getPictureObject();
 	
 $fileName = $po->getRelativePath();
 $thumbnail = $image->getThumbnail($po,intval($controller->thumbnailWidth), intval($controller->thumbnailHeight));
+// get file description (in the file manager attributes) of the picture object 
+$fileDescription = $po->getDescription();
 ?>
 <div id="<?php echo $magnific_type .'-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
 	<a class="image-popup-<?php echo $singleOption;?>" href="<?php echo $fileName; ?>" title="<?php echo $title;?>">
-		<img src="<?php  echo $thumbnail->src;?>" width="<?php echo $thumbnail->width;?>" height="<?php echo $thumbnail->height;?>" alt="<?php echo $titlte;?>" />
+		<img class="<?php echo $cssImageClass;?>"  src="<?php  echo $thumbnail->src;?>" width="<?php echo $thumbnail->width;?>" height="<?php echo $thumbnail->height;?>" alt="<?php echo $fileDescription;?>" />
 	</a>
-</div>
-<div>
-	<p><?php echo $thumbnailHeight . ' '. $thumbnailWidth; ?></p>
 </div>
 <?php
 // send js to footer

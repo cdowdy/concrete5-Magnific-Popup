@@ -14,7 +14,7 @@ $v 	  = View::GetInstance(); ?>
 		<img src="http://img.youtube.com/vi/<?php echo $str. '/'. $youtubeThumbnailOption;?>.jpg" /></a>
 <?php endif;?>
 <?php if ($videoOptions == 'vimeoThumb') :?>
-	<img src="http://placehold.it/350x150" data-vimeo-id="<?php echo $vimStr;?>" class="<?php echo $vimeoThumbnailOption;?>"/></a>
+	<img class="<?php echo $cssImageClass;?>"  src="http://placehold.it/350x150" data-vimeo-id="<?php echo $vimStr;?>" class="<?php echo $vimeoThumbnailOption;?>"/></a>
 <?php endif; ?>
 </div>
 <?php
