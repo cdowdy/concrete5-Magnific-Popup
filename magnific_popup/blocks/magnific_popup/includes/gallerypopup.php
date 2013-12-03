@@ -8,16 +8,14 @@ $ih = Loader::helper('image');
    <?php foreach ($images as $image): ?>
    <?php $thumbnail = $ih->getThumbnail($image,intval($controller->thumbnailWidth), intval($controller->thumbnailHeight)); ?>
    <?php $fileName = $image->getFileName(); ?>
-   <?php $fileDescription = $image->getAttribute('description');?>
+   <?php $fileDescription = $image->getDescription();?>
 	<li>
-		<a title="<?php echo $fileName; ?>" href="<?php echo $image->getRelativePath() ?>">
-			<img src="<?php echo $thumbnail->src ?>" width="<?php echo $thumbnailWidth; ?>" height="<?php echo $thumbnailHeight; ?>" alt="<?php echo $fileDescription; ?>" />
+		<a class="<?php echo $cssAnchorClass; ?>" title="<?php echo $fileName; ?>" href="<?php echo $image->getRelativePath() ?>">
+			<img class="<?php echo $cssImageClass; ?>" src="<?php echo $thumbnail->src ?>" width="<?php echo $thumbnailWidth; ?>" height="<?php echo $thumbnailHeight; ?>" alt="<?php echo $fileDescription; ?>" />
 		</a>
 	</li>
 <?php endforeach; ?>
 </ul>
-<?php else: ?>
-   <p><?php echo t('There are no images!') ?></p>
 <?php endif; ?>
 <?php
 if (!$page->isEditMode()) {
