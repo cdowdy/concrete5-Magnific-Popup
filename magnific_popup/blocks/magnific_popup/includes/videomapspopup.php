@@ -11,7 +11,7 @@ $v 	  = View::GetInstance(); ?>
 
 	<a class="popup-<?php echo $videoOptions; ?>" href="<?php echo $vidMapURL; ?>"><?php echo $vidMapLinkText; ?>
 <?php if ($videoOptions == 'youtubeThumb') :?>
-		<img src="http://img.youtube.com/vi/<?php echo $str. '/'. $youtubeThumbnailOption;?>.jpg" /></a>
+		<img class="<?php echo $cssImageClass;?>" src="http://img.youtube.com/vi/<?php echo $str. '/'. $youtubeThumbnailOption;?>.jpg" /></a>
 <?php endif;?>
 <?php if ($videoOptions == 'vimeoThumb') :?>
 	<img class="<?php echo $cssImageClass;?>"  src="http://placehold.it/350x150" data-vimeo-id="<?php echo $vimStr;?>" class="<?php echo $vimeoThumbnailOption;?>"/></a>
