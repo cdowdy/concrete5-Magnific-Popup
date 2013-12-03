@@ -43,15 +43,17 @@ To Do's
 
 Screenshots
 -----------
+**Main Add/Edit window**  
 
 ![Main](./screenshots/magnific.png)  
-No CSS Dialog  
+**CSS Dialog**  
+
 ![No Css](./screenshots/noCssDialog.png "No CSS Dialog")  
 No CSS Output  
 ![No CSS](./screenshots/nocss.png)  
-CSS using Zurb Foundation 5 framework  
+**CSS using Zurb Foundation 5 framework**  
 ![css](./screenshots/cssDialog.png)  
-CSS Output after using Foundation CSS class
+**CSS Output after using Foundation CSS class**
 ![CSS](./screenshots/with_css.png)
 ![Single Image](./screenshots/single.png)
 ![Gallery Of Images](./screenshots/gallery.png)
