@@ -26,8 +26,6 @@ handleSelection = function() {
 	}
 };
 
-
-
 // input validation 
 function ccmValidateBlockForm() {
 

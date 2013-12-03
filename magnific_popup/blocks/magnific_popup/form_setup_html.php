@@ -52,14 +52,7 @@ $thumbnailHeight = 200;
           <span class="help-block"><code>&ltdiv class="large-12 columns"&gt</code></span>
         </div>
       </div>
-      <div class="control-group">
-        <label for="cssAnchorClass" class="control-label"><?php echo t('Anchor/Link Class'); ?></label>
-        <div class="controls">
-          <input type="text" class="span3" value="<?php echo $cssAnchorClass; ?>" name="cssAnchorClass" />
-          <span class="help-block"><code><?php echo t('&lta href="#" class="your-class-here"&gt'); ?></code></span>
-        </div>
-      </div>
-      <div class="control-group">
+      <div id="cssImage" class="control-group">
         <label for="cssImageClass" class="control-label"><?php echo t('Image Class'); ?></label>
         <div class="controls">
           <input type="text" class="span3" value="<?php echo $cssImageClass; ?>" name="cssImageClass" />
