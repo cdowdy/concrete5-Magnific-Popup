@@ -2,9 +2,9 @@
 
 class MagnificPopupPackage extends Package {
 
-	protected $pkgHandle          = 'magnific_popup';
+	protected $pkgHandle   = 'magnific_popup';
 	protected $appVersionRequired = '5.6.0';
-	protected $pkgVersion         = '1.0.0';
+	protected $pkgVersion   = '0.9.0';
 
 	public function getPackageName() {
 		return t( 'Magnific Popup' );
@@ -20,4 +20,3 @@ class MagnificPopupPackage extends Package {
 		BlockType::installBlockTypeFromPackage( 'magnific_popup', $pkg );
 	}
 }
-?>
