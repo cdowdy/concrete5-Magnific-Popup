@@ -150,7 +150,7 @@ $thumbnailHeight = 200;
             <option value="vimeo"<?php  if ($videoOptions == 'vimeo') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Vimeo')?></option>
             <option value="vimeoThumb"<?php  if ($videoOptions == 'vimeoThumb') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Vimeo With Thumbnail')?></option>
             <option value="gmaps"<?php  if ($videoOptions == 'gmaps') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Google Maps')?></option>
-            <option value="bingmaps"<?php  if ($videoOptions == 'bingmaps') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Bing Maps')?></option>
+           <!-- <option value="bingmaps"<?php  if ($videoOptions == 'bingmaps') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Bing Maps')?></option> -->
           </select>
         </div>
       </div>
