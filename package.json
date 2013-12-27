@@ -1,0 +1,32 @@
+{
+  "name": "c5Magnific",
+  "version": "0.9.0",
+  "description": "Concrete5 Magnific Popup Package",
+  "main": "view.php",
+  "scripts": {
+    "test": "testthisb"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cdowdy/concrete5-Magnific-Popup.git"
+  },
+  "keywords": [
+    "concrete5",
+    "package",
+    "addon",
+    "lightbox",
+    "magnific",
+    "popup",
+    "jquery"
+  ],
+  "author": "Package Author Cory Dowdy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cdowdy/concrete5-Magnific-Popup/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-uglify": "~0.2.7"
+  }
+}
