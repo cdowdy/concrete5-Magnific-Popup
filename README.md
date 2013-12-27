@@ -35,7 +35,7 @@ To Do's
 - [x] move inline block javascript to footer (done! page speed rules should be a bit happier).
 - [x] fully implement CSS framework input (only does divs, probably best to leave ul's to templates).
 - [ ] fig and figcaption? 
-- [x] bing maps. (added but it isnt fullscreen lightbox). 
+- [x] ~~bing maps. (added but it isnt fullscreen lightbox).~~ Removed. it was ugly and I've gone full dumb on how to fix it. 
 - [x] install icon needs to be made.
 - [x] add block icon needs to be made.
 - [x] screenshots.
