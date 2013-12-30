@@ -69,6 +69,10 @@ Screenshots
   
 **Video Or Map LightBox**  
 
-![Video](./screenshots/video.png)
+![Video](./screenshots/video.png)  
+  
+**DEMO**
+![Demo Gif](./screenshots/magnificdemo.gif)
+
 
 
