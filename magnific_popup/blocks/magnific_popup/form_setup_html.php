@@ -129,7 +129,7 @@ $thumbnailHeight = 200;
       <label for="galleryImages" class="control-label"><?php echo t('Choose Image Gallery'); ?></label>
       <div class="controls">
         <?php echo $form->select('fsID', $sets, $fsID, array('class' => 'span3')); ?>
-        <span class="help-block">Choose a Gallery</span>
+        <span class="help-block"><?php echo t("Choose a Gallery"); ?></span>
       </div>
     </div>
   </div>
@@ -150,7 +150,7 @@ $thumbnailHeight = 200;
             <option value="vimeo"<?php  if ($videoOptions == 'vimeo') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Vimeo')?></option>
             <option value="vimeoThumb"<?php  if ($videoOptions == 'vimeoThumb') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Vimeo With Thumbnail')?></option>
             <option value="gmaps"<?php  if ($videoOptions == 'gmaps') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Google Maps')?></option>
-           <!-- <option value="bingmaps"<?php  if ($videoOptions == 'bingmaps') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Bing Maps')?></option> -->
+           <!-- <option value="bingmaps"<?php  if ($videoOptions == 'bingmaps') { ?>selected <?php  } ?> name="videoOptions"><?php echo t('Bing Maps')?></option> -->
           </select>
         </div>
       </div>
