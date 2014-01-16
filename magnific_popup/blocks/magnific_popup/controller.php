@@ -7,10 +7,12 @@ class MagnificPopupBlockController extends BlockController {
 	protected $btWrapperClass    = 'ccm-ui';
 	
 	// disabled cache during development
-	protected $btCacheBlockRecord                   = false;
-	protected $btCacheBlockOutput                   = false;
-	protected $btCacheBlockOutputOnPost             = false;
-	protected $btCacheBlockOutputForRegisteredUsers = false;
+	// EDITED ON 16-01-2014 (January 16, 2014)
+	// turned on block cache 
+	protected $btCacheBlockRecord                   = true;
+	protected $btCacheBlockOutput                   = true;
+	protected $btCacheBlockOutputOnPost             = true;
+	protected $btCacheBlockOutputForRegisteredUsers = true;
 	protected $btCacheBlockOutputLifetime           = CACHE_LIFETIME;
 
 
