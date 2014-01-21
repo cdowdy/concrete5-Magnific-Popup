@@ -75,7 +75,7 @@ function ccmValidateBlockForm() {
 	if ($('#magnific_type').val() == 'cssdialog' && $('#cssDialogText').val() === '') {
 		ccm_addError(ccm_t('dialog-text-required'));
 	}
-	if ($('#dialogType').val() == 'choose') {
+	if ($('#magnific_type').val() == 'cssdialog' && $('#dialogType').val() == 'choose') {
 		ccm_addError(ccm_t('dialog-type-required'));
 	}
 
