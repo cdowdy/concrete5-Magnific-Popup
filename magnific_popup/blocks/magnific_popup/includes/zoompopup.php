@@ -1,13 +1,13 @@
-<?php defined('C5_EXECUTE') or die(_("Access Denied."));
-$page = Page::getCurrentPage();
-$v 	  = View::GetInstance();
+<?php defined( 'C5_EXECUTE' ) or die( _( "Access Denied." ) );
+$page            = Page::getCurrentPage();
+$v               = View::GetInstance();
 
-$image = Loader::helper('image');
-$po =  $controller->getPictureObject();
-	
-$fileName = $po->getRelativePath();
-$thumbnail = $image->getThumbnail($po,intval($controller->thumbnailWidth), intval($controller->thumbnailHeight));
-// get file description (in the file manager attributes) of the picture object 
+$image           = Loader::helper( 'image' );
+$po              =  $controller->getPictureObject();
+
+$fileName        = $po->getRelativePath();
+$thumbnail       = $image->getThumbnail( $po, intval( $controller->thumbnailWidth ), intval( $controller->thumbnailHeight ) );
+// get file description (in the file manager attributes) of the picture object
 $fileDescription = $po->getDescription();
 ?>
 <div id="<?php echo $magnific_type .'-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
@@ -17,8 +17,8 @@ $fileDescription = $po->getDescription();
 </div>
 <?php
 // send js to footer
-if (!$page->isEditMode()) {
-	$v->addFooterItem('<script>
+if ( !$page->isEditMode() ) {
+	$v->addFooterItem( '<script>
 $(document).ready(function() {
 $(\'.zoom-gallery\').magnificPopup({
 	delegate: \'a\',
@@ -42,9 +42,9 @@ $(\'.zoom-gallery\').magnificPopup({
 			return element.find(\'img\');
 		}
 	}
-		
+
 });
 });
-</script>');
+</script>' );
 }
 ?>
