@@ -19,4 +19,7 @@ switch ($magnific_type) {
 	case 'vidMap':
 		$this->inc('includes/videomapspopup.php');
 		break;
+	case 'cssdialog':
+		$this->inc('includes/cssDialogpopup.php');
+		break;
 }
