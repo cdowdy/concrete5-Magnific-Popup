@@ -12,7 +12,7 @@ $ih   = Loader::helper( 'image' );
    <?php $fileName = $image->getFileName(); ?>
    <?php $fileDescription = $image->getDescription();?>
 	<li>
-		<a class="<?php echo $cssAnchorClass; ?>" title="<?php echo $fileName; ?>" href="<?php echo $image->getRelativePath() ?>">
+		<a class="<?php echo $cssAnchorClass; ?>" title="<?php echo $fileDescription; ?>" href="<?php echo $image->getRelativePath() ?>">
 			<img class="<?php echo $cssImageClass; ?>" src="<?php echo $thumbnail->src ?>" width="<?php echo $thumbnailWidth; ?>" height="<?php echo $thumbnailHeight; ?>" alt="<?php echo $fileDescription; ?>" />
 		</a>
 	</li>
