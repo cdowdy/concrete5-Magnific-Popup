@@ -3,12 +3,12 @@
 class MagnificPopupBlockController extends BlockController {
 	protected $btTable           = 'btMagnificPopup';
 	protected $btInterfaceWidth  = "590";
-	protected $btInterfaceHeight = "450";
+	protected $btInterfaceHeight = "500";
 	protected $btWrapperClass    = 'ccm-ui';
-	
+
 	// disabled cache during development
 	// EDITED ON 16-01-2014 (January 16, 2014)
-	// turned on block cache 
+	// turned on block cache
 	protected $btCacheBlockRecord                   = true;
 	protected $btCacheBlockOutput                   = true;
 	protected $btCacheBlockOutputOnPost             = true;
@@ -29,11 +29,14 @@ class MagnificPopupBlockController extends BlockController {
 
 		$bv   = new BlockView();
 		$bv->setBlockObject( $this->getBlockObject() );
-		$this->addFooterItem( $html->javascript( $bv->getBlockURL() . '/magnific/magnific-combined-1.0.0.min.js', array('minify' => true)));
+		$this->addFooterItem( $html->javascript( $bv->getBlockURL() . '/magnific/magnific-combined-1.0.0.min.js', array( 'minify' => true ) ) );
 
 	}
 
 	// JavaScript form validation strings
+	// these are used in the add and edit dialog window
+	// they create a modal/popup if incorrect data or no data is inserted
+	// into the text area/ text input.
 	public function getJavaScriptStrings() {
 		return array(
 			'selection-required'           => t( 'Please Select a Magnific Type.' ),
@@ -42,7 +45,10 @@ class MagnificPopupBlockController extends BlockController {
 			'gallery-required'             => t( 'Please Select a Gallery' ),
 			'url-requried'                 => t( 'Please Enter a Video or Map URL' ),
 			'link-text-required'           => t( 'Please Enter Link Text' ),
-			'video-map-selection-required' => t( 'Please Make a Video or Map Selection' )
+			'video-map-selection-required' => t( 'Please Make a Video or Map Selection' ),
+			'dialog-type-required'		   => t( 'Please Choose a Dialog Type' ),
+			'dialog-text-required'		   => t( 'Please Enter the Dialog Text' ),
+			'dialog-link-text-required'    => t( 'Pleaes Enter the Dialog Link Text' )
 		);
 	}
 	// getting a picture for the file picker
@@ -50,29 +56,28 @@ class MagnificPopupBlockController extends BlockController {
 		return $this->fIDpicture;
 	}
 	function getPictureObject() {
-		 return File::getByID($this->fIDpicture);
+		return File::getByID( $this->fIDpicture );
 	}
 
 	public function add() {
-      $this->addEdit();
-   }
-   
-   public function edit() {
-      $this->addEdit();
-   }
-   
-   public function addEdit() {
-      $fsList = new FileSetList();
-      $sets = $fsList->get();
-      
-      $options = array();
-      
-      foreach ($sets as $fs) {
-         $options[$fs->fsID] = $fs->fsName;
-      }
-      
-      $this->set('sets', $options);
-   }
+		$this->addEdit();
+	}
+	public function edit() {
+		$this->addEdit();
+	}
+
+	public function addEdit() {
+		$fsList = new FileSetList();
+		$sets = $fsList->get();
+
+		$options = array();
+
+		foreach ( $sets as $fs ) {
+			$options[$fs->fsID] = $fs->fsName;
+		}
+
+		$this->set( 'sets', $options );
+	}
 
 	public function view() {
 		$fs = FileSet::getByID( $this->fsID );
