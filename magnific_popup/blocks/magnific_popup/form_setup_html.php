@@ -1,5 +1,9 @@
 <?php
 defined('C5_EXECUTE') or die(_("Access Denied."));
+
+// Load TinyMCE 
+ Loader::element('editor_config');
+// load asset library (for photos)
 $al = Loader::helper('concrete/asset_library');
 $bf = null;
 $thumbnailWidth = 200;
@@ -75,10 +79,11 @@ $thumbnailHeight = 200;
       <div class="controls">
         <select id="magnific_type" name="magnific_type" class="span3">
           <option value="select1"><?php echo t('Select Popup Type')?></option>
-          <option id="single" value="single"<?php  if ($magnific_type == 'single') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Single Image Popup')?></option>
-          <option id="popup" value="popup"<?php  if ($magnific_type == 'popup') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Gallery Popup')?></option>
-          <option id="zoom" value="zoom"<?php  if ($magnific_type == 'zoom') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Zoom-Gallery')?></option>
-          <option id="videoMap" value="vidMap"<?php  if ($magnific_type == 'vidMap') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Video or Map Popup')?></option>
+          <option id="single"    value="single"<?php  if ($magnific_type == 'single') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Single Image Popup')?></option>
+          <option id="popup"     value="popup"<?php  if ($magnific_type == 'popup') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Gallery Popup')?></option>
+          <option id="zoom"      value="zoom"<?php  if ($magnific_type == 'zoom') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Zoom-Gallery')?></option>
+          <option id="videoMap"  value="vidMap"<?php  if ($magnific_type == 'vidMap') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Video or Map Popup')?></option>
+          <option id="cssDialog" value="cssdialog"<?php  if ($magnific_type == 'cssdialog') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Dialog With CSS Animation')?></option>
         </select>
       </div>
     </div>
@@ -137,7 +142,7 @@ $thumbnailHeight = 200;
   Video and Map type dropdown menu
   Have to choose one
 -->
-  <div id="vidMap"  style="display: none;">
+  <div id="vidMap" style="display:none;">
     <div class="ccm-block-field-group">
       <h5><?php echo t('Video and Map Options'); ?></h5>
       <div class="control-group">
@@ -200,13 +205,43 @@ $thumbnailHeight = 200;
       </div>
     </div><!-- end vidmap block field group -->
   </div><!-- end #vidMap container -->
+<!--
+  Dialog With CSS Animation
+-->
+ <div id="animationDialog" class="ccm-block-field-group">
+    <h5><?php echo t('Dialog With CSS Animation'); ?></h5>
+     <span class="help-block"><p><?php echo t('Currently Only One (1) of these can be on a single page at a time.');?></p></span>
+    <div class="control-group">
+      <?php echo $form->label('dialogType', "Dialog Type" ); ?> 
+      <div class="controls">
+        <?php echo $form->select('dialogType', array('choose' => 'Choose a Type', 'zoom-anim' => 'Popup With Zoom Animation', 'move-anim' => 'Popup With Move Animation'), 'choose'); ?>
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="cssDialogLinkText" class="control-label"><?php echo t('CSS Dialog Link Text'); ?></label>
+      <div class="controls">
+        <?php Loader::element('editor_controls'); ?>
+        <textarea id="cssDialogLinkText" name="cssDialogLinkText" class="ccm-advanced-editor"><?php echo $cssDialogLinkText;?></textarea>
+      </div>
+    </div>
+    <div class="control-group">
+      <label for="cssDialogText" class="control-label"><?php echo t('CSS Dialog Text'); ?></label>
+      <div class="controls">
+        <?php Loader::element('editor_controls'); ?>
+        <textarea id="cssDialogText" name="cssDialogText" class="ccm-advanced-editor"><?php echo $cssDialogText;?></textarea>
+      </div>
+    </div>
+  </div> 
+ <!-- End #cssDialog -->
 </div><!-- end #ccm-magnific-types -->
 
 <script type="text/javascript">
 $(document).ready(function() {
-$('#magnific_type, #videoOptions').change(handleSelection);
-// run event handler
-handleSelection.apply($('#magnific_type, #videoOptions'));
+    
+    $("#magnific_type, #videoOptions").change(handleNewSelection);
+    
+    // Run the event handler once now to ensure everything is as it should be
+    handleNewSelection.apply($("#magnific_type, #videoOptions"));
 });
 </script>
 <!-- Tab Setup -->
