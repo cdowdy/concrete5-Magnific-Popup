@@ -1,9 +1,11 @@
-<?php defined('C5_EXECUTE') or die(_("Access Denied.")); 
+<?php defined( 'C5_EXECUTE' ) or die( _( "Access Denied." ) ); 
+
 $page = Page::getCurrentPage();
-$v 	  = View::GetInstance();
-$ih = Loader::helper('image');
+$v    = View::GetInstance();
+$ih   = Loader::helper( 'image' );
+
 ?>
-<?php if ($images !== false): ?>
+<?php if ( $images !== false ): ?>
 <ul id="<?php echo $magnific_type . '-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
    <?php foreach ($images as $image): ?>
    <?php $thumbnail = $ih->getThumbnail($image,intval($controller->thumbnailWidth), intval($controller->thumbnailHeight)); ?>
