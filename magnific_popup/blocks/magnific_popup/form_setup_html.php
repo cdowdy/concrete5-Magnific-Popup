@@ -210,28 +210,53 @@ $thumbnailHeight = 200;
 -->
  <div id="animationDialog" class="ccm-block-field-group">
     <h5><?php echo t('Dialog With CSS Animation'); ?></h5>
-     <span class="help-block"><p><?php echo t('Currently Only One (1) of these can be on a single page at a time.');?></p></span>
-    <div class="control-group">
-      <?php echo $form->label('dialogType', "Dialog Type" ); ?> 
-      <div class="controls">
-        <?php echo $form->select('dialogType', array('choose' => 'Choose a Type', 'zoom-anim' => 'Popup With Zoom Animation', 'move-anim' => 'Popup With Move Animation'), 'choose'); ?>
+     <span class="help-block"><p><?php echo t('Only One (1) of these can be on a single page at a time when added through this interface.');?></p></span>
+<!-- 
+  CSS Dialog Dropdown
+-->
+      <div class="control-group">
+        <?php echo $form->label('dialogType', "Dialog Type" ); ?> 
+        <div class="controls">
+          <select id="dialogType" class="span4" name="dialogType">
+            <option value="choose"><?php echo t( 'Choose a CSS Dialog Animation Type' ); ?></option>
+            <option id="zoom-anim" value="zoom-anim"<?php  if ($dialogType == 'zoom-anim') { ?> selected<?php  } ?>><?php echo t( 'Popup With Zoom Animation' ); ?></option>
+            <option id="move-anim" value="move-anim"<?php  if ($dialogType == 'move-anim') { ?> selected<?php  } ?>><?php echo t( 'Popup With Move Animation' ); ?></option>
+            <option id="custom-anim" value="custom-anim"<?php  if ($dialogType == 'custom-anim') { ?> selected<?php  } ?>><?php echo t( 'Popup With Your Custom CSS Animation' ); ?></option>
+          </select>
+        </div>
       </div>
-    </div>
-    <div class="control-group">
-      <label for="cssDialogLinkText" class="control-label"><?php echo t('CSS Dialog Link Text'); ?></label>
-      <div class="controls">
-        <?php Loader::element('editor_controls'); ?>
-        <textarea id="cssDialogLinkText" name="cssDialogLinkText" class="ccm-advanced-editor"><?php echo $cssDialogLinkText;?></textarea>
+<!-- 
+  Custom Animation input 
+-->
+      <div id="customAnimation" class="control-group">
+        <label for="customAnim" class="control-label"><?php echo t( 'Custom Animation' ); ?></label>
+        <div class="controls">
+          <input id="customAnim" type="text" name="customAnim" value="<?php echo $customAnim; ?>" class="span3" />
+          <span class="help-block"><p><?php echo t( 'Animations are CSS transitions, Set these in your CSS file.' );?></p></span>
+          <span class="help-block"><p><?php echo t( 'You Can Find Examples here:' );?><a href="http://codepen.io/dimsemenov/pen/GAIkt" target="_blank">CodePen Examples</a></p></span>
+        </div>
+      </div>'
+<!-- 
+  Dialog Link Input
+-->
+      <div class="control-group">
+        <label for="cssDialogLinkText" class="control-label"><?php echo t('CSS Dialog Link Text'); ?></label>
+        <div class="controls">
+          <?php Loader::element('editor_controls'); ?>
+          <textarea id="cssDialogLinkText" name="cssDialogLinkText" class="ccm-advanced-editor"><?php echo $cssDialogLinkText;?></textarea>
+        </div>
       </div>
-    </div>
-    <div class="control-group">
-      <label for="cssDialogText" class="control-label"><?php echo t('CSS Dialog Text'); ?></label>
-      <div class="controls">
-        <?php Loader::element('editor_controls'); ?>
-        <textarea id="cssDialogText" name="cssDialogText" class="ccm-advanced-editor"><?php echo $cssDialogText;?></textarea>
+<!--
+  Dialog text input 
+-->
+      <div class="control-group">
+        <label for="cssDialogText" class="control-label"><?php echo t('CSS Dialog Text'); ?></label>
+        <div class="controls">
+          <?php Loader::element('editor_controls'); ?>
+          <textarea id="cssDialogText" name="cssDialogText" class="ccm-advanced-editor"><?php echo $cssDialogText;?></textarea>
+        </div>
       </div>
-    </div>
-  </div> 
+</div> 
  <!-- End #cssDialog -->
 </div><!-- end #ccm-magnific-types -->
 
@@ -242,6 +267,10 @@ $(document).ready(function() {
     
     // Run the event handler once now to ensure everything is as it should be
     handleNewSelection.apply($("#magnific_type, #videoOptions"));
+    $('#customAnimation').hide();
+    $('#dialogType').change(function() {
+    ($(this).val() == "custom-anim") ? $('#customAnimation').show() : $('#customAnimation').hide();
+});
 });
 </script>
 <!-- Tab Setup -->
