@@ -2,7 +2,7 @@ hideAllDivs = function() {
 	$("#single-options").hide();
 	$("#singleImage").hide();
 	$("#galleryImages").hide();
-
+	
 	$("#youtubeThumb").hide();
 	$("#vimeoThumb").hide();
 	$("#animationDialog").hide();
