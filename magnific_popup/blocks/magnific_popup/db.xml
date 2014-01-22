@@ -21,6 +21,7 @@
 		<field name="vidMapURL" type="X2"></field>
 		<field name="vidMapLinkText" type="C" size="255"></field>
 		<field name="dialogType" type="C" size="255"></field>
+		<field name="customAnim" type="C" size="255"></field>
 		<field name="cssDialogLinkText" type="C" size="255"></field>
 		<field name="cssDialogText" type="X2"></field>
 		<field name="thumbnailHeight" type="I"></field>
