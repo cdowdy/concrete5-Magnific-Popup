@@ -2,7 +2,11 @@ Concrete5 Magnific Popup Add-on Package
 =======================================
 
 Dmitry Semenov's Magnific Popup Responsive Lightbox Plugin in a Concrete5 Add-On Package.
-Minimum Concrete5 Version for this Add-on is 5.6.0
+Minimum Concrete5 Version for this Add-on is 5.6.0  
+
+**DEMO**
+![Demo Gif](./screenshots/magnificdemo.gif)
+
 
 This Project uses the following:
 -------------------------------------
@@ -14,8 +18,10 @@ This Project uses the following:
 This Concrete5 add-on has:
 --------------------------
 - Single Image Lightbox
+- Zoom Image Lightbox
 - Gallery Image Lightbox
 - Video and Map Lightbox w/optional youtube or vimeo thumbnail
+- Dialog Lightbox with CSS animations
 - current version # is 1.0.0
 
 Installation:
@@ -71,9 +77,12 @@ Screenshots
 **Video Or Map LightBox**  
 
 ![Video](./screenshots/video.png)  
+
+**CSS Animation**  
+
+![CSS Animation](./screenshots/cssAnimation.png)  
+
   
-**DEMO**
-![Demo Gif](./screenshots/magnificdemo.gif)
 
 
 
