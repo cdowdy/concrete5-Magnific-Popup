@@ -11,8 +11,6 @@ $page     = Page::getCurrentPage();
 	<?php echo $cssDialogText;?>
 </div>
 <?php
-
-
 if(!$page->isEditMode()) {
 	$v->addFooterItem("<script>
 $(document).ready(function() {
