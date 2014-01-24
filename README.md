@@ -21,7 +21,8 @@ This Concrete5 add-on has:
 - Zoom Image Lightbox
 - Gallery Image Lightbox
 - Video and Map Lightbox w/optional youtube or vimeo thumbnail
-- Dialog Lightbox with CSS animations
+- Dialog Lightbox with CSS animations  
+- Modal Lightbox
 - current version # is 1.0.0
 
 Installation:
@@ -37,7 +38,7 @@ To Do's
 ------
 - [ ] create webp fallback images (progressive jpg/transparent png) and have them load automagically for unsupported browsers.
 - [x] css dialog support.  
-- [ ] modal support
+- [x] modal support
 - [ ] add image previews to gallery and possibly sorting order.
 - [x] move inline block javascript to footer (done! page speed rules should be a bit happier).
 - [x] fully implement CSS framework input (only does divs, probably best to leave ul's to templates).
