@@ -84,6 +84,7 @@ $thumbnailHeight = 200;
           <option id="zoom"      value="zoom"<?php  if ($magnific_type == 'zoom') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Zoom-Image')?></option>
           <option id="videoMap"  value="vidMap"<?php  if ($magnific_type == 'vidMap') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Video or Map Popup')?></option>
           <option id="cssDialog" value="cssdialog"<?php  if ($magnific_type == 'cssdialog') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Dialog With CSS Animation')?></option>
+          <option id="modal" value="modal"<?php  if ($magnific_type == 'modal') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Modal')?></option>
         </select>
       </div>
     </div>
@@ -261,6 +262,33 @@ $thumbnailHeight = 200;
       </div>
 </div> 
  <!-- End #cssDialog -->
+<!-- 
+  Modal Inputs 
+-->
+<div id="modalInputs" class="ccm-block-field-group">
+    <h5><?php echo t('Modal Window'); ?></h5>
+<!-- 
+  Modal Link Input
+-->
+      <div class="control-group">
+        <label for="modalLink" class="control-label"><?php echo t('Modal Link Text'); ?></label>
+        <div class="controls">
+          <?php Loader::element('editor_controls'); ?>
+          <textarea id="modalLink" name="modalLink" class="ccm-advanced-editor"><?php echo $modalLink;?></textarea>
+        </div>
+      </div>
+<!--
+  Modal text input 
+-->
+      <div class="control-group">
+        <label for="modalText" class="control-label"><?php echo t('Modal Popup Text'); ?></label>
+        <div class="controls">
+          <?php Loader::element('editor_controls'); ?>
+          <textarea id="modalText" name="modalText" class="ccm-advanced-editor"><?php echo $modalText;?></textarea>
+        </div>
+      </div>
+</div> 
+ <!-- End #modalInputs -->
 </div><!-- end #ccm-magnific-types -->
 
 <script type="text/javascript">
