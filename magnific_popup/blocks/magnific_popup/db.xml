@@ -24,6 +24,8 @@
 		<field name="customAnim" type="C" size="255"></field>
 		<field name="cssDialogLinkText" type="C" size="255"></field>
 		<field name="cssDialogText" type="X2"></field>
+		<field name="modalLink" type="X2"></field>
+		<field name="modalText" type="X2"></field>
 		<field name="thumbnailHeight" type="I"></field>
 		<field name="thumbnailWidth" type="I"></field>
 	</table>
