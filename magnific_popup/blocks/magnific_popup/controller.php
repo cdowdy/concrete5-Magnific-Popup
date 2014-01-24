@@ -26,6 +26,7 @@ class MagnificPopupBlockController extends BlockController {
 	// on page view insert magnific javascript and vimeo thumb javascript into footer (these are minified)
 	public function on_page_view() {
 		$html = Loader::helper( 'html' );
+
 		$bv   = new BlockView();
 		$bv->setBlockObject( $this->getBlockObject() );
 		$this->addFooterItem( $html->javascript( $bv->getBlockURL() . '/magnific/magnific-combined-1.0.0.min.js', array( 'minify' => true ) ) );
