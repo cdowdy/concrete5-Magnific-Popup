@@ -81,7 +81,7 @@ $thumbnailHeight = 200;
           <option value="select1"><?php echo t('Select Popup Type')?></option>
           <option id="single"    value="single"<?php  if ($magnific_type == 'single') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Single Image Popup')?></option>
           <option id="popup"     value="popup"<?php  if ($magnific_type == 'popup') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Gallery Popup')?></option>
-          <option id="zoom"      value="zoom"<?php  if ($magnific_type == 'zoom') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Zoom-Gallery')?></option>
+          <option id="zoom"      value="zoom"<?php  if ($magnific_type == 'zoom') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Zoom-Image')?></option>
           <option id="videoMap"  value="vidMap"<?php  if ($magnific_type == 'vidMap') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Video or Map Popup')?></option>
           <option id="cssDialog" value="cssdialog"<?php  if ($magnific_type == 'cssdialog') { ?> selected<?php  } ?> name="magnific_type"><?php echo t('Dialog With CSS Animation')?></option>
         </select>
@@ -210,7 +210,6 @@ $thumbnailHeight = 200;
 -->
  <div id="animationDialog" class="ccm-block-field-group">
     <h5><?php echo t('Dialog With CSS Animation'); ?></h5>
-     <span class="help-block"><p><?php echo t('Only One (1) of these can be on a single page at a time when added through this interface.');?></p></span>
 <!-- 
   CSS Dialog Dropdown
 -->
@@ -219,8 +218,12 @@ $thumbnailHeight = 200;
         <div class="controls">
           <select id="dialogType" class="span4" name="dialogType">
             <option value="choose"><?php echo t( 'Choose a CSS Dialog Animation Type' ); ?></option>
-            <option id="zoom-anim" value="zoom-anim"<?php  if ($dialogType == 'zoom-anim') { ?> selected<?php  } ?>><?php echo t( 'Popup With Zoom Animation' ); ?></option>
-            <option id="move-anim" value="move-anim"<?php  if ($dialogType == 'move-anim') { ?> selected<?php  } ?>><?php echo t( 'Popup With Move Animation' ); ?></option>
+            <option id="zoom-in" value="zoom-in"<?php  if ($dialogType == 'zoom-in') { ?> selected<?php  } ?>><?php echo t( 'Popup With Zoom-In Animation' ); ?></option>
+            <option id="newspaper" value="newspaper"<?php  if ($dialogType == 'newspaper') { ?> selected<?php  } ?>><?php echo t( 'Popup With Newspaper Animation' ); ?></option>
+            <option id="newspaper" value="move-horizontal"<?php  if ($dialogType == 'move-horizontal') { ?> selected<?php  } ?>><?php echo t( 'Popup With Move Horizontal Animation' ); ?></option>
+            <option id="move-from-top" value="move-from-top"<?php  if ($dialogType == 'move-from-top') { ?> selected<?php  } ?>><?php echo t( 'Popup Move In From Top' ); ?></option>
+            <option id="3d-unfold" value="3d-unfold"<?php  if ($dialogType == '3d-unfold') { ?> selected<?php  } ?>><?php echo t( 'Popup With 3d Unfold Animation' ); ?></option>
+            <option id="zoom-out" value="zoom-out"<?php  if ($dialogType == 'zoom-out') { ?> selected<?php  } ?>><?php echo t( 'Popup With Zoom-Out Animation' ); ?></option>
             <option id="custom-anim" value="custom-anim"<?php  if ($dialogType == 'custom-anim') { ?> selected<?php  } ?>><?php echo t( 'Popup With Your Custom CSS Animation' ); ?></option>
           </select>
         </div>
