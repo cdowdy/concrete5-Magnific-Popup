@@ -22,4 +22,7 @@ switch ($magnific_type) {
 	case 'cssdialog':
 		$this->inc('includes/cssDialogpopup.php');
 		break;
+	case 'modal':
+		$this->inc('includes/modalpopup.php');
+		break;
 }
