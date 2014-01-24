@@ -1,44 +1,31 @@
 <?php defined( 'C5_EXECUTE' ) or die( _( "Access Denied." ) );
 $v        = View::GetInstance();
-// variables for the standard/stock animations
-$zoomAnim = 'my-mfp-zoom-in';
-$moveAnim = 'my-mfp-slide-bottom';
-$custom   =  $customAnim;
+$page     = Page::getCurrentPage();
 
-if ($dialogType == 'zoom-anim') {
-	$mainClass = $zoomAnim;
-} elseif ($dialogType == 'move-anim') {
-	$mainClass = $moveAnim;
-} else {
-	$mainClass = $custom; 
-}
-?><a class="popup-with-<?php echo $dialogType. '-' . $bID; ?>" href="#small-dialog"><?php echo $cssDialogLinkText; ?></a>
-
+?>
+<div id="dialogPopup-<?php echo $bID; ?>">
+  <a href="#dialog-window-<?php echo $bID;?>" data-effect="mfp-<?php echo $dialogType; ?>"><?php echo $cssDialogLinkText; ?></a>
+</div>
 <!-- css dialog popup. mfp-hide makes it hidden -->
-<div id="small-dialog" class="<?php echo $dialogType;?>-dialog mfp-hide">
+<div id="dialog-window-<?php echo $bID;?>" class="white-popup mfp-with-anim mfp-hide">
 	<?php echo $cssDialogText;?>
 </div>
 <?php
-$page = Page::getCurrentPage();
+
 
 if(!$page->isEditMode()) {
 	$v->addFooterItem("<script>
 $(document).ready(function() {
-	$('.popup-with-$dialogType-$bID').magnificPopup({
-		type: 'inline',
-
-		fixedContentPos: false,
-		fixedBgPos: true,
-
-		overflowY: 'auto',
-
-		closeBtnInside: true,
-		preloader: false,
-		
-		midClick: true,
-		removalDelay: 300,
-		mainClass: '$mainClass'
-	});
+ $('#dialogPopup-$bID').magnificPopup({
+    delegate: 'a',
+    removalDelay: 500, //delay removal by X to allow out-animation
+    callbacks: {
+      beforeOpen: function() {
+         this.st.mainClass = this.st.el.attr('data-effect');
+      }
+    },
+    midClick: true // allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source.
+  });
 });
 </script>");
 }
