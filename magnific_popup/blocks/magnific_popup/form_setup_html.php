@@ -257,7 +257,7 @@ $thumbnailHeight = 200;
         <label for="cssDialogText" class="control-label"><?php echo t('CSS Dialog Text'); ?></label>
         <div class="controls">
           <?php Loader::element('editor_controls'); ?>
-          <textarea id="cssDialogText" name="cssDialogText" class="ccm-advanced-editor"><?php echo $cssDialogText;?></textarea>
+          <?php echo $form->textarea('cssDialogText', '', array('class' => 'ccm-advanced-editor')); ?>
         </div>
       </div>
 </div> 
