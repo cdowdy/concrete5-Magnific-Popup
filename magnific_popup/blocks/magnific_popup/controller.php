@@ -1,4 +1,4 @@
-<?php defined( 'C5_EXECUTE' ) or die( _( "Access Denied." ) );
+<?php defined('C5_EXECUTE') or die(_( "Access Denied." ));
 
 class MagnificPopupBlockController extends BlockController {
 	protected $btTable           = 'btMagnificPopup';
@@ -48,7 +48,7 @@ class MagnificPopupBlockController extends BlockController {
 			'dialog-type-required'         => t( 'Please Choose a Dialog Type' ),
 			'dialog-text-required'         => t( 'Please Enter the Dialog Text' ),
 			'dialog-link-text-required'    => t( 'Pleaes Enter the Dialog Link Text' )
-			);
+		);
 	}
 	// getting a picture for the file picker
 	public function getPicture() {
@@ -90,4 +90,12 @@ class MagnificPopupBlockController extends BlockController {
 		$this->set( 'images', $images );
 		$this->set( 'picture', $this->getPicture() );
 	}
+
+	public function validate($args) {
+        $e = Loader::helper('validation/error');
+        if ($magnific_type == 'cssDialog' && trim($args['cssDialogLinkText']) == '') {
+            $e->add(t('Please Enter CSS Dialog Link Text.'));
+        }
+        return $e;
+    }
 }
