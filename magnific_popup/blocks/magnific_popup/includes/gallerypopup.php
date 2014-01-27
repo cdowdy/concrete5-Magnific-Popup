@@ -1,8 +1,11 @@
-<?php defined('C5_EXECUTE') or die('Access denied.');
-
-$page = Page::getCurrentPage();
-$v    = View::GetInstance();
-$ih   = Loader::helper( 'image' );
+<?php defined('C5_EXECUTE') or die(_( "Access Denied." ));
+	
+$page         = Page::getCurrentPage();
+$v            = View::GetInstance();
+$ih           = Loader::helper( 'image' );
+$loadingImage = t('Loading image');
+$imageError1  = t('The image ');
+$imageError2  = t(' could not be loaded.');
 
 ?>
 <?php if ( $images !== false ): ?>
@@ -21,26 +24,26 @@ $ih   = Loader::helper( 'image' );
 <?php endif; ?>
 <?php
 if (!$page->isEditMode()) {
-	$v->addFooterItem('<script>
+	$v->addFooterItem("<script>
 $(document).ready(function() {
-$(\'.popup-gallery\').magnificPopup({
-	delegate: \'a\',
-	type: \'image\',
-	tLoading: \'Loading image #%curr%...\',
-	mainClass: \'mfp-img-mobile\',
+$('.popup-gallery').magnificPopup({
+	delegate: 'a',
+	type: 'image' ,
+	tLoading: '$loadingImage #%curr%...',
+	mainClass: 'mfp-img-mobile',
 	gallery: {
 		enabled: true,
 		navigateByImgClick: true,
 		preload: [0,1] // Will preload 0 - before current, and 1 after the current image
 	},
 	image: {
-		tError: \'<a href=\"%url%\">The image #%curr%</a> could not be loaded.\',
+		tError: '<a href=\"%url%\">$imageError1#%curr%</a>$imageError2',
 		titleSrc: function(item) {
-			return item.el.attr(\'title\');
+			return item.el.attr('title');
 		}
 	}
 });
 });
-</script>');
+</script>");
 }
 ?>
