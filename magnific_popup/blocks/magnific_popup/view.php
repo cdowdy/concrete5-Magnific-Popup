@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die(_("Access Denied."));
+<?php defined('C5_EXECUTE') or die('Access denied.');
 $image = Loader::helper('image');
 /*
 	included files are located in the /includes directory
