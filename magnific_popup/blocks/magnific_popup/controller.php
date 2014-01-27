@@ -90,12 +90,4 @@ class MagnificPopupBlockController extends BlockController {
 		$this->set( 'images', $images );
 		$this->set( 'picture', $this->getPicture() );
 	}
-
-	public function validate($args) {
-        $e = Loader::helper('validation/error');
-        if ($magnific_type == 'cssDialog' && trim($args['cssDialogLinkText']) == '') {
-            $e->add(t('Please Enter CSS Dialog Link Text.'));
-        }
-        return $e;
-    }
 }
