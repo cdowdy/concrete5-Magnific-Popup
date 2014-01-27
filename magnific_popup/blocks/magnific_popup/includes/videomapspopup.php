@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die(_( "Access Denied." ));
+<?php defined('C5_EXECUTE') or die(_("Access Denied."));
 $v    = View::GetInstance(); ?>
 <div id="<?php echo $magnific_type .'-'.$bID ?>" class="<?php echo $magnific_type. '-gallery'. ' '. $cssFrameworkClass; ?>">
 <?php

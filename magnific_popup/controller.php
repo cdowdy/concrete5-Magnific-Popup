@@ -1,10 +1,9 @@
-<?php defined('C5_EXECUTE') or die(_( "Access Denied." ));
-
+<?php defined('C5_EXECUTE') or die(_("Access Denied."));
 class MagnificPopupPackage extends Package {
 
 	protected $pkgHandle          = 'magnific_popup';
 	protected $appVersionRequired = '5.6.0';
-	protected $pkgVersion         = '0.9.0';
+	protected $pkgVersion         = '0.9.2';
 
 	public function getPackageName() {
 		return t( 'Magnific Popup' );
