@@ -1,4 +1,4 @@
-<?php defined('C5_EXECUTE') or die(_( "Access Denied." ));
+<?php defined('C5_EXECUTE') or die('Access denied.');
 $page            = Page::getCurrentPage();
 $v               = View::GetInstance();
 
