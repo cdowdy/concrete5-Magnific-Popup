@@ -2,7 +2,7 @@ hideAllDivs = function() {
 	$("#single-options").hide();
 	$("#singleImage").hide();
 	$("#galleryImages").hide();
-	
+	$("#modalInputs").hide();
 	$("#youtubeThumb").hide();
 	$("#vimeoThumb").hide();
 	$("#animationDialog").hide();
@@ -37,6 +37,10 @@ handleNewSelection = function() {
 			break;
 		case 'cssdialog':
 			$("#animationDialog").show();
+			$("#vidMap").hide();
+			break;
+		case 'modal':
+			$("#modalInputs").show();
 			$("#vidMap").hide();
 			break;
 	}

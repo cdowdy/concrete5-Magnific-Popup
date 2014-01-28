@@ -3,7 +3,7 @@ class MagnificPopupPackage extends Package {
 
 	protected $pkgHandle          = 'magnific_popup';
 	protected $appVersionRequired = '5.6.0';
-	protected $pkgVersion         = '0.9.4';
+	protected $pkgVersion         = '0.9.6';
 
 	public function getPackageName() {
 		return t( 'Magnific Popup' );
