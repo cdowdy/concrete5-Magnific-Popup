@@ -5,8 +5,8 @@ $v               = View::GetInstance();
 $image           = Loader::helper( 'image' );
 $po              = $controller->getPictureObject();
 
-$imageSource     = t('image source');
-
+$json            = Loader::helper('json');
+$imageSource     = $json->encode(t('image source'));
 $fileName        = $po->getRelativePath();
 $thumbnail       = $image->getThumbnail( $po, intval( $controller->thumbnailWidth ), intval( $controller->thumbnailHeight ) );
 // get file description (in the file manager attributes) of the picture object
