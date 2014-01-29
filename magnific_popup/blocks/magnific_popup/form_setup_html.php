@@ -1,13 +1,15 @@
 <?php
-defined('C5_EXECUTE') or die('Access denied.');
 
-// Load TinyMCE 
+ defined('C5_EXECUTE') or die('Access denied.');
+ 
+ // Load TinyMCE 
  Loader::element('editor_config');
-// load asset library (for photos)
-$al = Loader::helper('concrete/asset_library');
-$bf = null;
-$thumbnailWidth = 200;
-$thumbnailHeight = 200;
+ // load asset library (for photos)
+ $al              = Loader::helper('concrete/asset_library');
+ $bf              = null;
+ // default thumbnail height and widths
+ $thumbnailWidth  = 200;
+ $thumbnailHeight = 200;
 ?>
 <!-- tabs -->
 <div class="clearfix">
@@ -156,10 +158,22 @@ $thumbnailHeight = 200;
             <option value="vimeo"<?php  if ($videoOptions == 'vimeo') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Vimeo')?></option>
             <option value="vimeoThumb"<?php  if ($videoOptions == 'vimeoThumb') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Vimeo With Thumbnail')?></option>
             <option value="gmaps"<?php  if ($videoOptions == 'gmaps') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Google Maps')?></option>
+           <!-- <option value="gmapsThumb"<?php  if ($videoOptions == 'gmapsThumb') { ?> selected<?php  } ?> name="videoOptions"><?php echo t('Google Maps With Preview Image')?></option> -->
            <!-- <option value="bingmaps"<?php  if ($videoOptions == 'bingmaps') { ?>selected <?php  } ?> name="videoOptions"><?php echo t('Bing Maps')?></option> -->
           </select>
         </div>
       </div>
+<!-- 
+  Maps Preview Image 
+-->
+<!-- not ready yet
+      <div id="mapsPreviewImage" class="control-group">
+        <label for="mapAddress" class="control-label"><?php   echo t('Map Address')?></label>
+        <div class="controls">
+         <input id="mapAddress" type="text" name="mapAddress" value="<?php echo $mapAddress; ?>" class="span3" />
+        </div>
+      </div>
+-->
 <!--
    YouTube Thumbnail Quality dropdown
 -->
