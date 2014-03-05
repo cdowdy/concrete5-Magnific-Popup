@@ -24,9 +24,6 @@ $errortxt = $json->encode(t('The image %s could not be loaded.', '#%curr%</a>'))
 <?php endforeach; ?>
 </ul>
 <?php endif; ?>
-<div>
-	<p><?php echo $loading, $errortxt ;?></p>
-</div>
 <?php
 if (!$page->isEditMode()) {
 	$v->addFooterItem("<script>
