@@ -1,3 +1,6 @@
+this is no longer maintained  
+===========================  
+
 Concrete5 Magnific Popup Add-on Package
 =======================================
 
